@@ -6,8 +6,8 @@
 #include <random>
 
 namespace ShellNameSpace {
-	void shell(int amountHamming);
-	void shell_sort(int* arr, int* hammingNumbers, int amountHamming, int lengthArr) {
+	void shell(std::vector<long long> &arr, int lengthArr);
+	void shell_sort(std::vector<long long> &arr, int* hammingNumbers, int amountHamming, int lengthArr);
 }
 
 #endif

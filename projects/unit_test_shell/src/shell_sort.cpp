@@ -1,8 +1,9 @@
 #include "shell_sort.hpp"
+#include <ctime>
 
 //Сортировка Шелла
 
-void ShellNameSpace::shell_sort(int* arr, int* hammingNumbers, int amountHamming, int lengthArr) {
+void ShellNameSpace::shell_sort(std::vector<long long> &arr, int* hammingNumbers, int amountHamming, int lengthArr) {
 
     for (int k = amountHamming; k >= 0; k--) {
         int gap = hammingNumbers[k];
@@ -18,9 +19,12 @@ void ShellNameSpace::shell_sort(int* arr, int* hammingNumbers, int amountHamming
     }
 }
 
-void ShellNameSpace::shell(int amountHamming) {
+void ShellNameSpace::shell(std::vector<long long> &arr, int lengthArr) {
     //3-гладкие числа
+
+    const int amountHamming = 10;
     int hammingNumbers[amountHamming];
+
 
     hammingNumbers[0] = 1;
 
@@ -37,11 +41,7 @@ void ShellNameSpace::shell(int amountHamming) {
             ++index3;
         }
     }
-    //заполнение основного массива рандомом
-    std::mt19937 mt(time(nullptr));
-    for (int i = 0; i < lengthArr; ++i) {
-        arr[i] = mt() % 100 + 100;
-    }
+
 
     shell_sort(arr, hammingNumbers, amountHamming, lengthArr);
 }
