@@ -1,1 +1,2 @@
-add_subdirectory(long_number)
+add_subdirectory(linked_list)
+add_subdirectory(vector)
